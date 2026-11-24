@@ -10,7 +10,7 @@ public sealed class Skill : OrderedEntity
     public string Name { get; set; } = string.Empty;
 
     [Display(Name = "Kategori")]
-    public int SkillCategoryId { get; set; }
+    public Guid? SkillCategoryId { get; set; }
 
     public SkillCategory? SkillCategory { get; set; }
 }

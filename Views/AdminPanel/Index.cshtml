@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="~/css/admin-panel.css" asp-append-version="true">
+</head>
+<body>
+    <div class="box">
+        <h1>Admin Panel</h1>
+        <p>Hoş geldin, @User.FindFirst("UserName")?.Value</p>
+        <p>Ana sayfadaki alanların yönetim ekranları sonraki adımlarda burada olacak.</p>
+        <button id="logout">Çıkış Yap</button>
+    </div>
+    <script src="~/js/admin-panel.js" asp-append-version="true"></script>
+</body>
+</html>

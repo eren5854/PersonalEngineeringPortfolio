@@ -18,7 +18,7 @@ public sealed class Project : OrderedEntity
     public string Url { get; set; } = string.Empty;
 
     [Display(Name = "Kategori")]
-    public int ProjectCategoryId { get; set; }
+    public Guid? ProjectCategoryId { get; set; }
 
     public ProjectCategory? ProjectCategory { get; set; }
 }

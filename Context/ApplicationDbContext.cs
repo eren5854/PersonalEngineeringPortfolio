@@ -23,12 +23,13 @@ public sealed class ApplicationDbContext : IdentityDbContext<AppUser, IdentityRo
         builder.Ignore<IdentityUserClaim<Guid>>();
         builder.Ignore<IdentityUserToken<Guid>>();
         builder.Ignore<IdentityUserRole<Guid>>();
+        builder.Ignore<IdentityUserPasskey<Guid>>(); // Eklendi
+        builder.Ignore<IdentityPasskeyData>();       // Eklendi
 
         builder.Entity<IdentityUserLogin<Guid>>()
-        .HasKey(l => new { l.LoginProvider, l.ProviderKey });
+            .HasKey(l => new { l.LoginProvider, l.ProviderKey });
 
         builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
-        //base.OnModelCreating(builder);
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
